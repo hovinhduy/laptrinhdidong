@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="Dolphins">
+        <label for="score1">Score 1:</label>
+        <input type="text" id="score1" name="score1">
+        <label for="score2">Score 2:</label>
+        <input type="text" id="score2" name="score2">
+        <label for="score3">Score 3:</label>
+        <input type="text" id="score3" name="score3">
+    </div>
+    <div class="Koalas">
+        <label for="score1">Score 1:</label>
+        <input type="text" id="score4" name="score1">
+        <label for="score2">Score 2:</label>
+        <input type="text" id="score5" name="score2">
+        <label for="score3">Score 3:</label>
+        <input type="text" id="score6" name="score3">
+    </div>
+    <button onclick="average()">Average</button>
+    <p id="result"></p>
+    <script>
+        function average() {
+            var score1 = document.getElementById("score1").value;
+            var score2 = document.getElementById("score2").value;
+            var score3 = document.getElementById("score3").value;
+            var score4 = document.getElementById("score4").value;
+            var score5 = document.getElementById("score5").value;
+            var score6 = document.getElementById("score6").value;
+            var averageDolphins = (score1 + score2 + score3) / 3;
+            var averageKoalas = (score4 + score5 + score6) / 3;
+            var result = document.getElementById("result");
+            if (averageDolphins > averageKoalas) {
+                result.innerHTML = "Dolphins win";
+            } else if (averageDolphins < averageKoalas) {
+                result.innerHTML = "Koalas win";
+            } else {
+                result.innerHTML = "Draw";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
