@@ -20,32 +20,37 @@ whether Mark has a higher BMI than John.
 </head>
 <script>
     function BMI() {
-        var mass = document.getElementById("mass").value;
-        var height = document.getElementById("height").value;
-        var BMI = mass / (height * height);
-        if (BMI < 18.5) {
-            document.getElementById("result").innerHTML = "Underweight";
-        } else if (BMI >= 18.5 && BMI < 24.9) {
-            document.getElementById("result").innerHTML = "Normal weight";
-        } else if (BMI >= 25 && BMI < 29.9) {
-            document.getElementById("result").innerHTML = "Overweight";
-        } else if (BMI >= 30 && BMI < 34.9) {
-            document.getElementById("result").innerHTML = "Obesity class 1";
-        } else if (BMI >= 35 && BMI < 39.9) {
-            document.getElementById("result").innerHTML = "Obesity class 2";
+        var massmark = document.getElementById("massmark").value;
+        var heightmark = document.getElementById("heightmark").value;
+        var massjonh = document.getElementById("massjonh").value;
+        var heightjonh = document.getElementById("heightjonh").value;
+        var BMImark = massmark / (heightmark * heightmark);
+        var BMIjonh = massjonh / (heightjonh * heightjonh);
+        var result = document.getElementById("result");
+        if (BMImark > BMIjonh) {
+            result.innerHTML = "Mark" + BMImark + " has a higher BMI than John  " + BMIjonh;
         } else {
-            document.getElementById("result").innerHTML = "Obesity class 3";
+            result.innerHTML = "John " + BMIjonh + " has a higher BMI than Mark" + BMImark;
         }
     }
 </script>
 
 <body>
-    <h2>mass</h2>
-    <input type="text" name="" id="mass">
-    <h2>height</h2>
-    <input type="text" name="" id="height">
+    <div class="mark">
+        <label for="mass">Mass mark:</label>
+        <input type="text" id="massmark" name="mass">
+        <label for="height">Height mark:</label>
+        <input type="text" id="heightmark" name="height">
+    </div>
+    <div class="Jonh">
+        <label for="mass">Mass jonh:</label>
+        <input type="text" id="massjonh" name="mass">
+        <label for="height">Height jone:</label>
+        <input type="text" id="heightjonh" name="height">
+    </div>
     <button onclick="BMI()">BMI</button>
     <p id="result"></p>
+
 
 
 
